@@ -21,5 +21,13 @@ jobs:
       with:
         java-version: 1.8
 
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Build
+      run: mvn clean install -DskipTests=true
+
+    - name: Test
+      run: mvn test
+
+    - name: Validate
+
+    - name: Deploy
+
