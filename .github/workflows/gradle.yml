@@ -20,7 +20,24 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+
+    - name: Pull
+      run: git pull
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
     - name: Build with Gradle
       run: ./gradlew build
+
+    - name: Compile
+      run: ./gradlew compileJava
+
+    - name: Test
+      run: ./gradlew check
+
+    - name: Validate
+      run: echo OK
+
+    - name: Deploy
+      run: echo OK
