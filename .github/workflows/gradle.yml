@@ -33,20 +33,11 @@ jobs:
     - name: Compile
       run: ./gradlew compileJava
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test
-        run: ./gradlew test
+    - name: Test
+      run: ./gradlew test
 
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Validate
-        run: echo OK
+    - name: Validate
+      run: echo OK
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy
-        run: echo OK
+    - name: Deploy
+      run: echo OK
