@@ -23,6 +23,3 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
-    - name: Run
-      run: java -jar target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar
