@@ -30,11 +30,8 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Compile
-      run: gradle compileJava
-
     - name: Test
-      run: gradle test --tests 'all.in.build.classes.java.test'
+      run: ./gradlew clean test --info
 
     - name: Validate
       run: echo OK
