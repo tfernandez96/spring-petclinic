@@ -28,8 +28,8 @@ jobs:
       run: mvn test
 
     - name: Validate
-      run:
+      run: echo OK
 
     - name: Deploy
-      run:
+      run: echo OK
 
