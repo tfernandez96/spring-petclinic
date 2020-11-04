@@ -27,7 +27,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build with Gradle
+    - name: Build
       run: ./gradlew build
 
     - name: Test
@@ -36,5 +36,9 @@ jobs:
     - name: Validate
       run: echo OK
 
-    - name: Deploy
-      run: echo OK
+    - name: Deploy to Heroku
+      uses: AkhileshNS/heroku-deploy@v3.6.8
+      with:
+        heroku_api_key: "a0eed79f-6b9a-4530-81a0-6af9390c6a49"
+        heroku_app_name: "spring-petclinic-tom"
+        heroku_email: "tfernandez@est.frba.utn.edu.ar"

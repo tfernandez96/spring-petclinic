@@ -7,6 +7,10 @@ target/*
 .idea
 *.iml
 /target
+/build
+/.vscode
+/.gradle
+/.mvn
 .sts4-cache/
 .vscode/*
 !.vscode/settings.json
