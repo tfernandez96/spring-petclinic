@@ -9,19 +9,11 @@ group = 'org.springframework.samples'
 version = '2.3.0.BUILD-SNAPSHOT'
 description = """petclinic"""
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+//sourceCompatibility = 1.5
+//targetCompatibility = 1.5
 tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+	options.encoding = 'UTF-8'
 }
-//task stage(dependsOn: ['clean', 'build'])
-//build.mustRunAfter clean
-//ext {
-//    javaMainClass = "org.springframework.samples.petclinic.PetClinicApplication"
-//}
-//application {
-//    mainClassName = javaMainClass
-//}
 
 jar {
     manifest {
