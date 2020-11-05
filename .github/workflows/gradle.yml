@@ -37,10 +37,10 @@ jobs:
       run: ./gradlew check --info
 
     - name: Docker Tasks
-      run: sudo docker-compose up -d
-          sudo ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 --stacktrace
-          sudo ./gradlew -i test jacocoTestReport
-          sudo docker-compose down
+      run: docker-compose up -d
+          ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 --stacktrace
+          ./gradlew -i test jacocoTestReport
+          docker-compose down
 
     - name: Deploy to Heroku
       uses: AkhileshNS/heroku-deploy@v3.6.8
