@@ -9,6 +9,8 @@ group = 'org.springframework.samples'
 version = '2.3.0.BUILD-SNAPSHOT'
 description = """petclinic"""
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
 //sourceCompatibility = 1.5
 //targetCompatibility = 1.5
 tasks.withType(JavaCompile) {
