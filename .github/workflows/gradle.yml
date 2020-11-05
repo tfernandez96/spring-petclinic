@@ -34,15 +34,13 @@ jobs:
       run: ./gradlew test --info
 
     - name: Validate
-      run: ./gradlew check --info
-
-    - name: Docker Tasks
-      run: docker-compose up -d
+      run: |
+          docker-compose up -d
           ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 --stacktrace
           ./gradlew -i test jacocoTestReport
           docker-compose down
 
-    - name: Deploy to Heroku
+    - name: Deploy
       uses: AkhileshNS/heroku-deploy@v3.6.8
       with:
         heroku_api_key: "a0eed79f-6b9a-4530-81a0-6af9390c6a49"
