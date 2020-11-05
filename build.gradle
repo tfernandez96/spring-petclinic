@@ -11,8 +11,22 @@ targetCompatibility = 1.8
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-task stage(dependsOn: ['build', 'clean'])
-build.mustRunAfter clean
+//task stage(dependsOn: ['clean', 'build'])
+//build.mustRunAfter clean
+//ext {
+//    javaMainClass = "org.springframework.samples.petclinic.PetClinicApplication"
+//}
+//application {
+//    mainClassName = javaMainClass
+//}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'petclinic',
+                'Implementation-Version': version,
+                'Main-Class': 'org.springframework.samples.petclinic.PetClinicApplication'
+    }
+}
 
 
 
