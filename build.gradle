@@ -10,7 +10,7 @@ version = '2.3.0.BUILD-SNAPSHOT'
 description = """petclinic"""
 
 task stage(dependsOn: ['build', 'clean']) {
-//    ./gradlew
+    sudo docker compose-up
 }
 build.mustRunAfter clean
 //sourceCompatibility = 1.5
