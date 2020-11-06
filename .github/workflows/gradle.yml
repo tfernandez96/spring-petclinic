@@ -35,8 +35,8 @@ jobs:
 
     - name: ValidateSonar
       run: docker-compose up &
-           sleep 20
-           ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000
+           sleep 20 &&
+           ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 &&
            docker-compose down
 
     - name: Jacoco Test Report
