@@ -33,11 +33,17 @@ jobs:
     - name: Test
       run: ./gradlew test --info
 
+    - name: ValidateSonar
+      run: docker-compose up &
+           sleep 20
+           ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000
+           docker-compose down
+
     - name: Jacoco Test Report
       run: ./gradlew jacocoTestReport
 
     - name: Validate
-      run: ./gradlew sonarqube
+      run: ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000
 
     - name: Deploy
       uses: AkhileshNS/heroku-deploy@v3.6.8
