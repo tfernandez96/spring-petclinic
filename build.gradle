@@ -9,7 +9,9 @@ group = 'org.springframework.samples'
 version = '2.3.0.BUILD-SNAPSHOT'
 description = """petclinic"""
 
-task stage(dependsOn: ['build', 'clean'])
+task stage(dependsOn: ['build', 'clean']) {
+//    ./gradlew
+}
 build.mustRunAfter clean
 //sourceCompatibility = 1.5
 //targetCompatibility = 1.5
@@ -32,6 +34,10 @@ sonarqube {
 }
 test {
     finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacoco {
+    toolVersion = "0.8.5"
+    reportsDir = file("$buildDir/customJacocoReportDir")
 }
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
