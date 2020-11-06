@@ -34,7 +34,7 @@ jobs:
       run: gradle test --info
 
     - name: Jacoco Test
-      run : gradlew -i test jacocoTestReport
+      run : ./gradlew -i test jacocoTestReport
 
     - name: Jacoco Test Report
       run: gradle jacocoTestReport
