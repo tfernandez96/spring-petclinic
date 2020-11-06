@@ -33,11 +33,11 @@ jobs:
     - name: Test
       run: gradle test --info
 
-#    - name: ValidateSonar
-#      run: docker-compose up &
-#           sleep 50 &&
-#           gradle sonarqube -Dsonar.host.url=http://localhost:9000 &&
-#           docker-compose down
+    - name: ValidateSonar
+      run: docker-compose up -d &
+           sleep 50 &&
+           gradle sonarqube -Dsonar.host.url=http://localhost:9000 &&
+           docker-compose down
 #
     - name: Jacoco Test Report
       run: gradle jacocoTestReport

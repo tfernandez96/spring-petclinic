@@ -26,11 +26,6 @@ jar {
     }
 }
 
-sonarqube {
-    properties {
-        property "sonar.sourceEncoding", "UTF-8"
-    }
-}
 test {
     finalizedBy jacocoTestReport // report is always generated after tests run
 }
