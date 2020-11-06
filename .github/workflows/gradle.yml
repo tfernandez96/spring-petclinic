@@ -28,22 +28,22 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build
-      run: ./gradlew build
+      run: gradle build
 
     - name: Test
-      run: ./gradlew test --info
+      run: gradle test --info
 
 #    - name: ValidateSonar
 #      run: docker-compose up &
 #           sleep 50 &&
-#           ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 &&
+#           gradle sonarqube -Dsonar.host.url=http://localhost:9000 &&
 #           docker-compose down
 #
-#    - name: Jacoco Test Report
-#      run: ./gradlew jacocoTestReport
-#
-#    - name: Validate
-#      run: ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000
+    - name: Jacoco Test Report
+      run: gradle jacocoTestReport
+
+    - name: Validate
+      run: gradle sonarqube -Dsonar.host.url=http://localhost:9000
 
     - name: Deploy
       uses: AkhileshNS/heroku-deploy@v3.6.8
