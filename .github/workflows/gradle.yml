@@ -35,7 +35,7 @@ jobs:
 
     - name: ValidateSonar
       run: docker-compose up &
-           sleep 20 &&
+           sleep 50 &&
            ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 &&
            docker-compose down
 
