@@ -30,6 +30,9 @@ jobs:
     - name: Build
       run: ./gradlew build
 
+    - name: Test
+      run: ./gradlew test
+
     - name: Jacoco Test Report
       run : ./gradlew -i test jacocoTestReport
 
