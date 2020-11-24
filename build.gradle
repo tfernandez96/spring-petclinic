@@ -47,7 +47,6 @@ dependencies {
 group = 'org.springframework.samples'
 version = '2.3.0.BUILD-SNAPSHOT'
 description = 'petclinic'
-//sourceCompatibility = '1.8'
 
 publishing {
     publications {
@@ -66,6 +65,13 @@ sonarqube {
         property "sonar.projectKey", "tfernandez96_spring-petclinic"
         property "sonar.organization", "tfernandez96"
         property "sonar.host.url", "https://sonarcloud.io"
-//        property "sonar.scanner.force-deprecated-java-version", true
+    }
+}
+
+sourceSets {
+    test {
+        java {
+            srcDir 'test'
+        }
     }
 }
