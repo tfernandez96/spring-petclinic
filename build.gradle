@@ -84,3 +84,11 @@ sourceSets {
         }
     }
 }
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "tfernandez96_spring-petclinic"
+        property "sonar.organization", "tfernandez96"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
