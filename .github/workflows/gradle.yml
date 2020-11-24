@@ -36,15 +36,15 @@ jobs:
     - name: Jacoco Test Report
       run : ./gradlew -i test jacocoTestReport
 
-    - name: ValidateSonar
-      run: docker-compose up &
-        sleep 30 &&
-        ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 --info &&
-        docker-compose down
+    - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     - name: Deploy
       uses: AkhileshNS/heroku-deploy@v3.6.8
       with:
-        heroku_api_key: "a0eed79f-6b9a-4530-81a0-6af9390c6a49"
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
         heroku_app_name: "spring-petclinic-tom"
         heroku_email: "tfernandez@est.frba.utn.edu.ar"
