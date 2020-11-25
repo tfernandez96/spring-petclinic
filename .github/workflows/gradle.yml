@@ -31,7 +31,7 @@ jobs:
       run: ./gradlew build
 
     - name: Test
-      run: ./gradlew -i test
+      run: ./gradlew test --debug
 
     - name: Jacoco Test Report
       run : ./gradlew -i test jacocoTestReport
