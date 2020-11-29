@@ -68,5 +68,7 @@ sonarqube {
     }
 }
 
-sourceSets.main.java.srcDirs = ['main']
-sourceSets.test.java.srcDirs = ['test']
+test {
+    useTestNG()
+    useJUnitPlatform()
+}
